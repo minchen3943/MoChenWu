@@ -1,8 +1,9 @@
 import { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans_SC } from "next/font/google";
 import "./globals.css";
+import { ViewTransitions } from "next-view-transitions";
 
-const inter = Inter({ subsets: ["latin"] });
+const notoSans = Noto_Sans_SC({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "沫尘屋",
@@ -11,8 +12,10 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ViewTransitions>
+      <html lang="zh-CN">
+        <body className={notoSans.className}>{children}</body>
+      </html>
+    </ViewTransitions>
   );
 }

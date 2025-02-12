@@ -1,5 +1,10 @@
 import Navbar from "@/components/Navbar";
 
 export default function page() {
-  return <Navbar />;
+  return (
+    <>
+      <Navbar />
+      <div>page2</div>
+    </>
+  );
 }
