@@ -1,10 +1,7 @@
-import Navbar from "@/components/Navbar";
-
 export default async function Page() {
   return (
     <>
-      <Navbar />
-      page1
+      <div>page1</div>
     </>
   );
 }

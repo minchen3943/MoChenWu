@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { Noto_Sans_SC } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 import { ViewTransitions } from "next-view-transitions";
 
 const notoSans = Noto_Sans_SC({ subsets: ["latin"] });
@@ -14,7 +15,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <ViewTransitions>
       <html lang="zh-CN">
-        <body className={notoSans.className}>{children}</body>
+        <body className={notoSans.className}>
+          <div id="root">
+            <header>
+              <Navbar />
+            </header>
+            <main>{children}</main>
+          </div>
+        </body>
       </html>
     </ViewTransitions>
   );
